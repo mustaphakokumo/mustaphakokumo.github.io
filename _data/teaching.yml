@@ -1,0 +1,18 @@
+# =====================================================================
+#  TEACHING
+#  One block per course, newest first.
+#    role:     small grey label on the left (e.g. Teaching assistant, Tutor)
+#    title:    course name
+#    details:  level, instructor, years
+#    link:     optional course page; makes the title clickable
+# =====================================================================
+
+- role: Teaching assistant
+  title: Modern DiD, Event-study Design, and other Topics in Applied Econometrics
+  details: "Ph.D. level · Prof. Alessandro Tarozzi · 2026"
+  link:
+
+- role: Tutor
+  title: Econometrics Sequence
+  details: "First-year PhD · 2023 to present"
+  link:

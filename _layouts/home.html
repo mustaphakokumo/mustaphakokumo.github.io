@@ -1,0 +1,159 @@
+---
+layout: default
+---
+{%- assign cv_file = site.static_files | where: "path", site.cv | first -%}
+{%- assign photo_file = site.static_files | where: "path", site.photo | first -%}
+{%- assign initials = "" -%}
+{%- assign name_parts = site.name | split: " " -%}
+{%- for part in name_parts -%}{%- assign letter = part | slice: 0 -%}{%- assign initials = initials | append: letter -%}{%- endfor -%}
+{%- assign chevron = '<svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg>' -%}
+<div class="wrap page">
+
+  <aside class="author" aria-label="Contact">
+    <div class="portrait">
+      {%- if photo_file %}
+      <img src="{{ site.photo | relative_url }}" alt="Portrait of {{ site.name | escape }}" width="480" height="600">
+      {%- else %}
+      <span class="monogram" aria-hidden="true">{{ initials }}</span>
+      {%- endif %}
+    </div>
+
+    <div class="author-info">
+      <p class="label">Contact</p>
+      <address class="contact">
+        <span class="email-row">
+          <a class="email" href="mailto:{{ site.email }}" id="email">{{ site.email }}</a>
+          <button class="copy" type="button" id="copy-email" aria-label="Copy email address">Copy</button>
+        </span>
+        {{ site.address | join: "<br>" }}
+      </address>
+
+      {%- assign has_profiles = false -%}
+      {%- for p in site.profiles -%}{%- if p.url -%}{%- assign has_profiles = true -%}{%- endif -%}{%- endfor -%}
+      {%- if has_profiles %}
+      <ul class="profiles">
+        {%- for p in site.profiles -%}{%- if p.url %}
+        <li><a href="{{ p.url }}" target="_blank" rel="noopener me">{{ p.name }}</a></li>
+        {%- endif -%}{%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+
+    {%- if cv_file %}
+    <div class="cv-wrap">
+      <a class="btn-cv" href="{{ site.cv | relative_url }}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+        Curriculum vitae
+      </a>
+    </div>
+    {%- endif %}
+  </aside>
+
+  <main id="main">
+    <section id="about" aria-labelledby="name">
+      {%- if site.eyebrow %}
+      <p class="eyebrow">{{ site.eyebrow }}</p>
+      {%- endif %}
+      <h1 class="name" id="name">{{ site.name }}</h1>
+      <p class="role">{{ site.role }}, {{ site.institution }}, {{ site.city }}</p>
+
+      <div class="bio">
+        {{ content }}
+      </div>
+
+      {%- if site.fields and site.fields.size > 0 %}
+      <div class="fields">
+        <h2 class="label">Research interests</h2>
+        <ul>
+          {%- for f in site.fields %}
+          <li>{{ f }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endif %}
+    </section>
+
+    <section id="research" aria-labelledby="research-title">
+      <div class="section-head">
+        <h2 id="research-title">Research</h2>
+      </div>
+
+      {%- for group in site.data.research %}
+      {%- if group.papers and group.papers.size > 0 %}
+      <h3 class="label subhead">{{ group.group }}</h3>
+      <ol class="papers">
+        {%- for paper in group.papers %}
+        {%- assign pid = paper.title | slugify -%}
+        {%- assign abstract = paper.abstract | strip -%}
+        {%- assign talks = paper.presentations | default: empty -%}
+        {%- assign coauthors = paper.coauthors | default: empty %}
+        <li class="paper" id="{{ pid }}">
+          <h4 class="paper-title">
+            {%- if paper.link -%}
+            <a href="{{ paper.link }}" target="_blank" rel="noopener">{{ paper.title }}</a>
+            {%- else -%}
+            {{ paper.title }}
+            {%- endif -%}
+          </h4>
+          {%- if coauthors.size > 0 %}
+          <p class="coauthors">with
+            {%- for c in coauthors %}
+            {%- if forloop.last and forloop.length > 1 %} and{% elsif forloop.index > 1 %},{% endif %}
+            {% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}
+            {%- endfor %}
+          </p>
+          {%- endif %}
+
+          {%- if abstract != "" or talks.size > 0 %}
+          <div class="toggles">
+            {%- if abstract != "" %}
+            <button class="toggle" type="button" aria-expanded="false" aria-controls="{{ pid }}-abstract">Abstract {{ chevron }}</button>
+            {%- endif %}
+            {%- if talks.size > 0 %}
+            <button class="toggle" type="button" aria-expanded="false" aria-controls="{{ pid }}-talks">Presentations {{ chevron }}</button>
+            {%- endif %}
+          </div>
+          {%- if abstract != "" %}
+          <div class="panel" id="{{ pid }}-abstract" hidden>
+            {{ abstract | markdownify }}
+          </div>
+          {%- endif %}
+          {%- if talks.size > 0 %}
+          <div class="panel" id="{{ pid }}-talks" hidden>
+            <ul>
+              {%- for t in talks %}
+              <li><span>{{ t.venue }}</span><span class="when">{{ t.year }}</span></li>
+              {%- endfor %}
+            </ul>
+          </div>
+          {%- endif %}
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+      {%- endif %}
+      {%- endfor %}
+    </section>
+
+    <section id="teaching" aria-labelledby="teaching-title">
+      <div class="section-head">
+        <h2 id="teaching-title">Teaching</h2>
+      </div>
+      <ul class="courses">
+        {%- for c in site.data.teaching %}
+        <li class="course">
+          <span class="kind">{{ c.role }}</span>
+          <div>
+            <h3 class="course-title">
+              {%- if c.link -%}<a href="{{ c.link }}" target="_blank" rel="noopener">{{ c.title }}</a>{%- else -%}{{ c.title }}{%- endif -%}
+            </h3>
+            {%- if c.details %}
+            <p>{{ c.details }}</p>
+            {%- endif %}
+          </div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+  </main>
+</div>

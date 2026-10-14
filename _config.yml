@@ -1,0 +1,83 @@
+# =====================================================================
+#  YOUR DETAILS
+#  Edit the text to the right of each colon. Keep the spacing at the
+#  start of each line exactly as it is. Lines starting with # are notes.
+#  After you commit, the site updates in about a minute.
+# =====================================================================
+
+name: Mustapha Kokumo
+role: PhD Researcher in Economics
+institution: European University Institute
+institution_url: https://www.eui.eu/DepartmentsAndCentres/Economics
+city: Florence
+
+# Small green line above your name.
+eyebrow: Applied microeconomics
+
+# One or two sentences. Google shows this under your name in search
+# results, and WhatsApp/LinkedIn show it when the link is shared.
+description: >-
+  Mustapha Kokumo is a PhD researcher in economics at the European
+  University Institute in Florence. He studies migration, refugee
+  integration and labour markets.
+
+email: mustapha.kokumo@eui.eu
+address:
+  - European University Institute
+  - Via delle Fontanelle 18
+  - Fiesole, Italy
+
+# Upload the files to the assets folder with exactly these names.
+# Until a file exists, the site hides the CV links / shows your initials.
+cv: /assets/Mustapha_Kokumo_CV.pdf
+photo: /assets/photo.jpg
+
+# Research interests shown under your bio, one per line.
+fields:
+  - Applied Microeconomics
+  - Economics of Migration
+  - Labour Economics
+  - Political Economy
+  - Cultural Economics
+
+# Profiles. Paste a link after "url:" to show it; leave it empty to hide.
+# These also tell Google that these profiles are you.
+profiles:
+  - name: Google Scholar
+    url:
+  - name: ORCID
+    url:
+  - name: LinkedIn
+    url:
+  - name: Bluesky
+    url:
+  - name: X
+    url:
+  - name: GitHub
+    url: https://github.com/mustaphakokumo
+
+# =====================================================================
+#  TECHNICAL SETTINGS (set once, then leave alone)
+# =====================================================================
+
+# The site's final address, no slash at the end. Used for Google and
+# link previews. It must match the GitHub account that hosts the site
+# (account mustaphakokumo -> https://mustaphakokumo.github.io).
+# Change it if you use another account or move to your own domain.
+url: https://mustaphakokumo.github.io
+baseurl: ""
+
+lang: en
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - HOW-TO-UPDATE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

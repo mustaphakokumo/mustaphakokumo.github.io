@@ -1,0 +1,47 @@
+# =====================================================================
+#  RESEARCH
+#  Papers are grouped under headings (group). Groups appear in the order
+#  written here. A group with no papers is hidden.
+#
+#  For each paper, fill in what you have and leave the rest empty:
+#    title:          the paper title (required)
+#    coauthors:      one line per coauthor, with an optional link
+#    link:           PDF / SSRN / journal page; makes the title clickable
+#    abstract:       the text goes on the indented lines below "abstract: |"
+#    presentations:  one "- venue: / year:" pair per talk
+#  Empty abstract or presentations = that button is hidden.
+#
+#  Copy-paste template for a new paper (remove the leading "# "):
+#
+#    - title: Paper Title
+#      coauthors:
+#        - name: Jane Doe
+#          url: https://janedoe.com
+#      link:
+#      abstract: |
+#        First sentence of the abstract. Second sentence.
+#      presentations:
+#        - venue: EUI Microeconometrics Working Group
+#          year: 2025
+# =====================================================================
+
+# - group: Publications
+#   papers:
+#     - title: ...
+
+- group: Work in progress
+  papers:
+
+    - title: Refugee Ethnic Composition and the Integration of Earlier Immigrants
+      coauthors:
+      link:
+      abstract: |
+      presentations:
+
+    - title: "Who Should Go Where: The Role of Job Referrals in Refugee Allocation Policy"
+      coauthors:
+        - name: Allen Magsino
+          url:
+      link:
+      abstract: |
+      presentations:
