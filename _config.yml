@@ -54,7 +54,7 @@ profiles:
   - name: X
     url:
   - name: GitHub
-    url: https://github.com/mustaphakokumo
+    url: https://mustaphakokumo.com
 
 # =====================================================================
 #  TECHNICAL SETTINGS (set once, then leave alone)
@@ -62,9 +62,9 @@ profiles:
 
 # The site's final address, no slash at the end. Used for Google and
 # link previews. It must match the GitHub account that hosts the site
-# (account mustaphakokumo -> https://mustaphakokumo.github.io).
+# (account mustaphakokumo -> https://mustaphakokumo.com).
 # Change it if you use another account or move to your own domain.
-url: https://mustaphakokumo.github.io
+url: https://mustaphakokumo.com
 baseurl: ""
 
 lang: en
