@@ -32,11 +32,16 @@
 - group: Work in progress
   papers:
 
-    - title: Refugee Ethnic Composition and the Integration of Earlier Immigrants
+- title: Refugee Ethnic Composition and the Integration of Earlier Immigrants
       coauthors:
-      link: https://janedoe.com
-      abstract: 
-      presentations: 10th Understanding Voluntary and Forced Migration International Conference (Lille), 4th Junior Workshop on the Economics of Migration (Madrid), EUI Microeconometrics Working Group (Florence), EUI Migration Working Group (Florence), 4th Milan PhD Workshop (Milan)
+      link: /assets/the-file-name.pdf
+      abstract: |
+      presentations:
+        - venue: 10th Understanding Voluntary and Forced Migration International Conference, Lille
+        - venue: 4th Junior Workshop on the Economics of Migration, Madrid
+        - venue: EUI Microeconometrics Working Group, Florence
+        - venue: EUI Migration Working Group, Florence
+        - venue: 4th Milan PhD Workshop, Milan
 
 
     - title: "Who Should Go Where: The Role of Job Referrals in Refugee Allocation Policy"
