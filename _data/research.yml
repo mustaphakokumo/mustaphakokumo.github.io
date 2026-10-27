@@ -33,7 +33,7 @@
   papers:
     - title: Refugee Ethnic Composition and the Integration of Earlier Immigrants
       coauthors:
-      link: /assets/Mustapha_Kokumo_CV.pdf
+   #  link: /assets/Mustapha_Kokumo_CV.pdf
       abstract: |
       presentations:
         - venue: 4th Junior Workshop on the Economics of Migration, Madrid
