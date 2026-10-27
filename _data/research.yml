@@ -36,11 +36,11 @@
       link: /assets/the-file-name.pdf
       abstract: |
       presentations:
-        - venue: 10th Understanding Voluntary and Forced Migration International Conference, Lille
         - venue: 4th Junior Workshop on the Economics of Migration, Madrid
         - venue: EUI Microeconometrics Working Group, Florence
         - venue: EUI Migration Working Group, Florence
         - venue: 4th Milan PhD Workshop, Milan
+        - venue: 10th Understanding Voluntary and Forced Migration International Conference, Lille
 
 
     - title: "Who Should Go Where: The Role of Job Referrals in Refugee Allocation Policy"
